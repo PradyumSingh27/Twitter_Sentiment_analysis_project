@@ -1,6 +1,8 @@
 # Twitter_Sentiment_analysis_project
 
-## 🛰️ How I Collected Data using RapidAPI
+## Web Scrape methology:
+
+#### 🛰️ How I Collected Data using RapidAPI
 
 For this project, I collected tweets directly from Twitter using the [Twitter API](https://rapidapi.com/collection/twitter-apis) provided on RapidAPI.
 
