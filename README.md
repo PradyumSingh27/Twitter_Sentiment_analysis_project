@@ -47,6 +47,7 @@ for tweet in data['statuses']:
     print(tweet['text'])
 
 
+```mermaid
 flowchart TD
     A[Start] --> B[Create account on RapidAPI]
     B --> C[Subscribe to Twitter API on RapidAPI]
@@ -57,3 +58,4 @@ flowchart TD
     G --> H[Combine datasets for analysis]
     H --> I[Perform sentiment analysis and visualization]
     I --> J[End]
+
