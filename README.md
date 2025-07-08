@@ -45,7 +45,7 @@ data = response.json()
 
 for tweet in data['statuses']:
     print(tweet['text'])
-
+```
 
 ```mermaid
 flowchart TD
