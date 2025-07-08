@@ -53,9 +53,10 @@ flowchart TD
     B --> C[Subscribe to Twitter API on RapidAPI]
     C --> D[Get API Key & Host Header]
     D --> E[Write Python code using requests library]
-    E --> F[Fetch tweets by query (e.g., "Indian election")]
-    F --> G[Store tweets (CSV files)]
+    E --> F[Fetch tweets by query]
+    F --> G[Store tweets as CSV files]
     G --> H[Combine datasets for analysis]
     H --> I[Perform sentiment analysis and visualization]
     I --> J[End]
+
 
