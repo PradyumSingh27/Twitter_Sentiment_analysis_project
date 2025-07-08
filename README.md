@@ -49,6 +49,66 @@ for tweet in data['statuses']:
     print(tweet['text'])
 ```
 
+### 🗃️ How I Combined All Datasets
+
+After collecting multiple CSV files of tweets (for example: `tweets_1_dataset.csv`, `tweets_2_dataset.csv`, ..., `tweets_n_dataset.csv`), I combined them into a single large dataset to make analysis easier and more efficient.
+
+#### 💡 Why combine?
+
+- Makes it easier to clean, preprocess, and analyze data in one place.
+- Helps in performing consistent sentiment analysis and visualizations without repeating the same steps on separate files.
+
+#### ⚙️ Steps to combine
+
+1️⃣ **Upload all CSV files**
+
+- In Google Colab, you can upload multiple files to the `/content` directory (or any folder you choose).
+
+2️⃣ **Find and read all files**
+
+- Use Python’s `glob` module to find all CSV files matching your file name pattern.
+- Read each CSV into a pandas DataFrame.
+
+3️⃣ **Merge all DataFrames**
+
+- Append each DataFrame into a list.
+- Concatenate them into a single DataFrame using `pd.concat()`.
+
+4️⃣ **Save as one final file**
+
+- Export the combined DataFrame as a single CSV file for further analysis.
+
+---
+
+#### 📝 Example Python code
+
+```python
+import pandas as pd
+import glob
+
+# Path where your CSV files are stored
+path = '/content'  # Use your directory if local
+
+# Find all CSV files starting with 'tweets_'
+all_files = glob.glob(path + "/tweets_*.csv")
+
+# List to hold individual DataFrames
+dfs = []
+
+for filename in all_files:
+    df = pd.read_csv(filename)
+    dfs.append(df)
+
+# Combine all DataFrames into one
+combined_df = pd.concat(dfs, ignore_index=True)
+
+# Save the final combined CSV file
+combined_df.to_csv('/content/Combined_Tweets_Dataset.csv', index=False)
+
+print("✅ All CSV files successfully combined and saved as 'Combined_Tweets_Dataset.csv'")
+```
+
+
 ```mermaid
 flowchart TD
     A[Start] --> B[Create account on RapidAPI]
